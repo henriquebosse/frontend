@@ -1,0 +1,89 @@
+<mat-card>
+    <mat-card-title>Emissão de Relatórios</mat-card-title>
+    <form>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Relatório</mat-label>
+          <mat-select>
+            <mat-option value="option">Estabelecimentos Avaliados (Listagem e Estatísticas)</mat-option>
+            <mat-option value="option">Clientes por Região (Listagem e Estatísticas)</mat-option>
+            <mat-option value="option">Produtos  (Listagem e Estatísticas)</mat-option>          
+          </mat-select>
+        </mat-form-field>  
+
+        <mat-form-field class="dtInicial" appearance="fill">
+            <mat-label>Data Inicial</mat-label>
+            <input matInput [matDatepicker]="dtInicial"  name="dtInicial">
+            <mat-datepicker-toggle matSuffix [for]="dtInicial">
+              <mat-icon matDatepickerToggleIcon>></mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #dtInicial></mat-datepicker>
+        </mat-form-field>
+                      
+        <mat-form-field class="dtFinal" appearance="fill">
+            <mat-label>Data Final</mat-label>
+            <input matInput [matDatepicker]="dtFinal" name="dtFinal">
+            <mat-datepicker-toggle matSuffix [for]="dtFinal">
+              <mat-icon matDatepickerToggleIcon>></mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #dtFinal></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Código da Anvisa</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Estabelecimento</mat-label>
+            <mat-select>
+              <mat-option value="option">01.899.125/0015-89 - DrogaRaia</mat-option>
+              <mat-option value="option">01.370.256/0001-25 - Drogaria Catarinense</mat-option>
+            </mat-select>
+        </mat-form-field>        
+
+        <mat-form-field appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <mat-select>
+              <mat-option value="option">Florianópolis</mat-option>
+              <mat-option value="option">São José</mat-option>
+              <mat-option value="option">Biguaçu</mat-option>
+              <mat-option value="option">Palhoça</mat-option>
+            </mat-select>
+        </mat-form-field>  
+
+        <mat-form-field appearance="fill">
+            <mat-label>Produto</mat-label>
+            <mat-select>
+              <mat-option value="option">PROTETOR SOLAR FACIAL EPISOL COLOR PELE CLARA FPS70</mat-option>
+              <mat-option value="option">GENACOL 400MG</mat-option>
+              <mat-option value="option">ESTIMULADOR NEUROMUSCULAR TANYX</mat-option>
+              <mat-option value="option">ESTOMAZIL SABOR GUARANÁ</mat-option>
+              <mat-option value="option">NIQUITIN 21 MG</mat-option>
+            </mat-select>
+        </mat-form-field>  
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Categoria</mat-label>
+            <mat-select>
+                <mat-option value="option">Cosmético</mat-option>
+                <mat-option value="option">Higiene</mat-option>
+                <mat-option value="option">Medicamento</mat-option>  
+            </mat-select>
+        </mat-form-field>  
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <mat-select>
+              <mat-option value="option">Controlado</mat-option>
+              <mat-option value="option">Somente com Receita</mat-option>
+              <mat-option value="option">Liberado</mat-option>              
+            </mat-select>
+        </mat-form-field>          
+    </form>
+    
+    <button mat-raised-button color='primary' (click)="createReport()">
+        Gerar Relatório
+    </button>   
+</mat-card>
+

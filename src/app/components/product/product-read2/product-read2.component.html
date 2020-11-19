@@ -1,0 +1,43 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="iCodProduto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+      <td mat-cell *matCellDef="let row">{{row.iCodProduto}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="sNomeProduto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome do Produto</th>
+      <td mat-cell *matCellDef="let row">{{row.sNomeProduto}}</td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="sDescricaoProduto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Descrição do Produto</th>
+      <td mat-cell *matCellDef="let row">{{row.sDescricaoProduto}}</td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="fPrecoVenda">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço de Venda</th>
+      <td mat-cell *matCellDef="let row">{{row.fPrecoVenda}}</td>
+    </ng-container>
+    
+    <!-- Cod Anvisa Column -->
+    <ng-container matColumnDef="sCodAnvisa">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Anvisa</th>
+      <td mat-cell *matCellDef="let row">{{row.sCodAnvisa}}</td>
+    </ng-container>    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 50]">
+  </mat-paginator>
+</div>

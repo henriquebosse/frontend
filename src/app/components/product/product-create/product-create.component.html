@@ -1,0 +1,80 @@
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+        <!-- <mat-form-field>
+            <input matInput readonly placeholder="Código" [(ngModel)]="product.id" name="id">
+        </mat-form-field> -->
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="product.sNomeProduto" name="sNomeProduto">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="product.sDescricaoProduto" name="sDescricaoProduto">
+        </mat-form-field>  
+
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="product.fPrecoVenda" name="fPrecoVenda">
+        </mat-form-field>  
+
+        <mat-form-field>
+            <input matInput placeholder="Preço Promocional (R$)" [(ngModel)]="product.fPrecoPromocional" name="fPrecoVenda">
+        </mat-form-field> 
+
+        <mat-form-field>
+            <input matInput placeholder="Código Anvisa" [(ngModel)]="product.sCodAnvisa" name="sCodAnvisa">
+        </mat-form-field>  
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fabricante</mat-label>
+            <mat-select>
+              <mat-option value="option">Nestlé</mat-option>
+              <mat-option value="option">Mantecorp</mat-option>
+              <mat-option value="option">R9C</mat-option>              
+            </mat-select>
+        </mat-form-field>           
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Categoria</mat-label>
+            <mat-select>
+              <mat-option value="option">Cuidados com a Pele</mat-option>
+              <mat-option value="option">Higiene Bucal</mat-option>
+              <mat-option value="option">Hora do Banho</mat-option>              
+              <mat-option value="option">Desodorantes</mat-option>              
+            </mat-select>
+        </mat-form-field>   
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo de Produto</mat-label>
+            <mat-select>
+              <mat-option value="option">Hidratante</mat-option>
+              <mat-option value="option">Shampoo</mat-option>
+              <mat-option value="option">Antiséptico</mat-option>              
+              <mat-option value="option">Mamadeiras</mat-option>              
+            </mat-select>
+        </mat-form-field>   
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>Descrição da Bula</mat-label>
+            <textarea matInput placeholder=""></textarea>
+        </mat-form-field>               
+
+        <label>
+            <input type="checkbox">
+            Necessita Receita
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            Utilizar Preço Promocional
+        </label>
+    </form>
+    
+    <button mat-raised-button (click)="createProduct()" color='primary'>
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" color='Danger'>
+        Cancelar
+    </button>    
+</mat-card>
+
